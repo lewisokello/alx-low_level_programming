@@ -9,13 +9,8 @@
 
 int main(void)
 {
-int n = 48;
-while (n <= 57)
-{
-char ch = 'n';
-putchar(n);
-n += 1;
-}
-printf("\n");
+int ch;
+for (ch = '48'; ch <= '57'; ch += '1')
+putchar(ch);
 return (0);
 }
