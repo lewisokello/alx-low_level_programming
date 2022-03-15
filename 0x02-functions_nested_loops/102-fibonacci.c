@@ -16,7 +16,7 @@ long fib;
 while (n < 50)
 {
 fib = j + i;
-if (n != 49
+if (n != 49)
 printf("%ld, ", fib);
 else
 printf("%ld\n", fib);
