@@ -1,28 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+
 /**
- * main - Entry Point
- * @argc: arguments
- * @argv: array pointing to arguments
- * Return: 0
+ * main - adds positive numbers.
+ * @argc: the number of arguments passed to the program.
+ * @argv: an array to the pointers to the argument.
+ * Return: if one of the numbers contain symbols that are non-digits
+ * ,1, otherwise 0.
  */
 int main(int argc, char *argv[])
 {
-int i, sum = 0;
+int num, digit, sum = 0;
 
-if (argc < 1)
-return (0);
-
-for (i = 1; i < argc; i++)
+for (num = 1; num < argc; num++)
 {
-if (!atoi(argv[i]))
+for (digit = 0; argv[num][digit]; digit++)
 {
-printf("%s\n", "Error");
+if (argv[num][digit] < '0' || argv[num][digit] > '9')
+{
+printf("Error\n");
 return (1);
 }
-sum += atoi(argv[i]);
 }
+
+sum += atoi(argv[num]);
+}
+
 printf("%d\n", sum);
+
 return (0);
 }
